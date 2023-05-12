@@ -1,18 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import themes from "@theme/themes";
+import { ThemeProvider } from "styled-components";
+import {useFonts, Roboto_400Regular, Roboto_700Bold} from "@expo-google-fonts/roboto";
+import { Loading } from "@components/Loading";
+import { Routes } from "./src/routes";
+
+
 
 export default function App() {
+  const [fontsloaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <ThemeProvider theme={themes}>
+      {fontsloaded ? <Routes/> : <Loading />}
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

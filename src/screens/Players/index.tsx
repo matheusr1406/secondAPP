@@ -11,12 +11,10 @@ import { groupRemoveByName } from "@storage/group/groupRemoveByName";
 import { playerAddByGroup } from "@storage/player/playerAddByGroup";
 import { playersGetByGroupAndTeam } from "@storage/player/playerGetByGroupAndTeam";
 import { playerRemoveByGroup } from "@storage/player/playerRemoveByGroup";
-import { playersGetByGroup } from "@storage/player/playersGetByGroup";
 import { PlayerStorageDTO } from "@storage/player/PlayerStorageDTO";
 import { AppError } from "@utils/AppError";
 import { useEffect, useState } from "react";
-import { Alert } from "react-native";
-import { FlatList, Keyboard } from "react-native";
+import { FlatList, Keyboard,  Alert } from "react-native";
 import { Container, Form, HeaderList, NumberPlayers } from "./styles";
 
 type RouteParams = {
